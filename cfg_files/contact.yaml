@@ -1,0 +1,37 @@
+output_dir: '$POSA_dir/trained_models/contact'
+
+#terms/weights
+contact_w: 1
+use_semantics: 0
+semantics_w: 0
+kl_w: 1.0
+
+trunc_val: 0.5
+log_interval: 5
+epochs: 15
+step: 1
+test: 1
+
+#arch/training common
+block_size: 1
+seq_length: 9
+channels: 64
+num_hidden_layers: 3
+z_dim: 256
+h_dim: 512
+drop_out: 0
+batch_size: 64
+num_groups: 8
+normalization_mode: 'group_norm'
+lr: 1e-3
+reduce_lr: 0
+num_workers: 0
+
+loss_type: 'bce'
+no_obj_classes: 42
+down_sample: 2
+up_sample: False
+
+#Paths
+data_dir: '$POSA_dir/data'
+ds_us_dir: '$POSA_dir/mesh_ds'
